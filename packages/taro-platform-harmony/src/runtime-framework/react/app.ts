@@ -140,7 +140,10 @@ export function createReactApp (
     public unmount (id: string, cb: () => void) {
       const elements = this.elements
       const idx = elements.findIndex(item => item.props.tid === id)
-      elements.splice(idx, 1)
+      // 页面还在 pages 队列中未渲染时 idx 为 -1，splice(-1, 1) 会误删最后一个页面
+      if (idx !== -1) {
+        elements.splice(idx, 1)
+      }
       this.forceUpdate(cb)
     }
 

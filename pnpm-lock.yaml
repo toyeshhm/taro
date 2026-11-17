@@ -1196,6 +1196,9 @@ importers:
       '@tarojs/helper':
         specifier: workspace:*
         version: link:../taro-helper
+      '@tarojs/react':
+        specifier: workspace:*
+        version: link:../taro-react
       '@tarojs/runtime':
         specifier: workspace:*
         version: link:../taro-runtime

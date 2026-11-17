@@ -22,6 +22,8 @@
     "prod": "pnpm run build",
     "prebuild": "run-s clean",
     "build": "pnpm run rollup --environment NODE_ENV:production",
+    "test": "vitest run",
+    "test:ci": "vitest run --coverage",
     "clean": "rimraf dist",
     "dev": "pnpm run rollup --environment NODE_ENV:development -w",
     "rollup": "rollup --config rollup.config.ts --configPlugin typescript"
@@ -40,6 +42,7 @@
   },
   "devDependencies": {
     "@tarojs/helper": "workspace:*",
+    "@tarojs/react": "workspace:*",
     "@tarojs/runtime": "workspace:*",
     "@tarojs/shared": "workspace:*",
     "@tarojs/service": "workspace:*",
